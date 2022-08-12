@@ -3,6 +3,8 @@ public class TesteFuncionario {
 
 	public static void main(String[] args) {
 		
+		
+		
 		Funcionario nico = new Gerente();
 		nico.setNome("nico nico");
 		nico.setCpf("777.777.777-7");

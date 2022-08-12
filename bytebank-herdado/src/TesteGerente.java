@@ -2,6 +2,10 @@
 public class TesteGerente {
 
 	public static void main(String[] args) {
+		
+		Gerente g = new Gerente();
+		g.setSenha(0);
+		
 		Gerente g1 = new Gerente();
 		g1.setNome("Marco");
 		g1.setCpf("255255255255-2");

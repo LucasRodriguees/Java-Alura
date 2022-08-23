@@ -5,34 +5,29 @@ public abstract class Conta {
 	private int numero;
 	private Cliente titular;
 	private static int total;
-	
-	
+
 	public Conta(int agencia, int numero) {
 		Conta.total++;
-		//System.out.println("o total de contas é " + total);
+		// System.out.println("o total de contas é " + total);
 		this.agencia = agencia;
 		this.numero = numero;
-		//this.saldo = 100;
-		//System.out.println("estou criando uma conta! " + this.numero);
+		// this.saldo = 100;
+		// System.out.println("estou criando uma conta! " + this.numero);
 	}
-	
+
 	public abstract void deposita(double valor);
 
-	public boolean saca(double valor) {
-		if (this.saldo >= valor) {
-			this.saldo -= valor;
-			return true;
-		} else {
-			return false;
+	public void saca(double valor) throws SaldoInsuficienteException {
+		if (this.saldo < valor) {
+			throw new SaldoInsuficienteException("Saldo: " + this.saldo + ", Valor: " + valor);
 		}
+		this.saldo -= valor;
 	}
 
-	public boolean transfere(double valor, Conta destino) {
-		if (this.saca(valor)) {
-			destino.deposita(valor);
-			return true;
-		}
-		return false;
+	public void transfere(double valor, Conta destino) throws SaldoInsuficienteException {
+		this.saca(valor);
+		destino.deposita(valor);
+
 	}
 
 	public double getSaldo() {
@@ -67,7 +62,7 @@ public abstract class Conta {
 	public void setTitular(Cliente titular) {
 		this.titular = titular;
 	}
-	
+
 	public Cliente getTitular() {
 		return titular;
 	}
@@ -75,9 +70,5 @@ public abstract class Conta {
 	public static int getTotal() {
 		return Conta.total;
 	}
-
-
-
-	
 
 }

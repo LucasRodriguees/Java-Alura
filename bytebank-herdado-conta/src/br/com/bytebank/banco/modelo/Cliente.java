@@ -1,5 +1,13 @@
 package br.com.bytebank.banco.modelo;
 
+/**
+ * Classe que representa um cliente no Bytebank.
+ * 
+ * @author Lucas Rodrigues
+ * @version 0.1
+ * 
+ */
+
 public class Cliente {
 
 	String nome;
@@ -25,5 +33,5 @@ public class Cliente {
 		this.profissao = profissao;
 	}
 	
-	//
+	
 }

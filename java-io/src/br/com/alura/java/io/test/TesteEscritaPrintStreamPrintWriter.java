@@ -1,14 +1,17 @@
 package br.com.alura.java.io.test;
 
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
+import java.io.PrintStream;
+import java.io.PrintWriter;
 import java.io.Writer;
 
-public class TesteEscritaFileWriter {
+public class TesteEscritaPrintStreamPrintWriter {
 
 	public static void main(String[] args) throws IOException {
 
@@ -18,13 +21,17 @@ public class TesteEscritaFileWriter {
 //		Writer osw = new OutputStreamWriter(fos);
 //		BufferedWriter bw = new BufferedWriter(osw);
 		
-		BufferedWriter bw = new BufferedWriter(new FileWriter("lorem2.txt"));
-		bw.write("Lorem ipsum dolor sit amet, consectetur adipiscing elit");	
-		bw.newLine();
-		bw.newLine();
-		bw.write("ajfjafjafnajfajfaifhafh");
+//		BufferedWriter bw = new BufferedWriter(new FileWriter("lorem2.txt"));		
+//		PrintStream ps = new PrintStream(new File("lorem2.txt"));
 		
-		bw.close();
+		PrintWriter ps = new PrintWriter("lorem2.txt");
+		
+		ps.println("Lorem ipsum dolor sit amet, consectetur adipiscing elit");
+		ps.println();	
+		ps.println();
+		ps.println("ajfjafjafnajfajfaifhafh");
+			
+		ps.close();
 	}
 
 }

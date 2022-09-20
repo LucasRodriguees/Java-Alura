@@ -47,6 +47,25 @@ public class TestandoListas {
 		System.out.println("Depois de ordenado: ");
 		System.out.println(aulas);
 		
+		String cs1 = "Java";
+		String cs2 = "Logica de programacao";
+		String cs3 = "Javascript";
+		
+		ArrayList<String> cursos = new ArrayList<>();
+		cursos.add(cs1);
+		cursos.add(cs2);
+		cursos.add(cs3);
+		System.out.println(cursos);
+		
+		cursos.remove(0);
+		System.out.println(cursos);
+		
+		System.out.println(cursos.get(0));
+		
+		cursos.sort(null);
+		System.out.println(cursos);
+		
+		
 	}
 
 }

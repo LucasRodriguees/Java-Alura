@@ -22,12 +22,14 @@ Curso javaColecoes = new Curso("Dominando as coleções", "Paulo");
 		
 		System.out.println("Todos os alunos Matriculados: ");
 		javaColecoes.getAlunos().forEach(a -> {
-			System.out.println(a);
-			
-			
+			System.out.println(a);	
 		});
 
+		System.out.println(javaColecoes.estaMatriculado(a1));
 		
+		Aluno turini = new Aluno("Rodrigo Turini", 34672);
+		System.out.println("E esse Turini, está matriculado?");
+		System.out.println(javaColecoes.estaMatriculado(turini));
 
 	}
 

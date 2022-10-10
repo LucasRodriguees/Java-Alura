@@ -12,46 +12,38 @@ public class OrdenaStrings {
 		palavras.add("alura online");
 		palavras.add("editora online");
 		palavras.add("caelum");
+
+		// Collections.sort(palavras, comparador);
+
+		palavras.sort( (s1 , s2) -> 
+
+			/*if (s1.length() < s2.length())
+				return -1;
+			if (s1.length() > s2.length())
+				return 1;
+			return 0; */
+			   
+			Integer.compare(s1.length(), s2.length())
+				
+			);
 		
-		Comparator<String> comparador = new ComparadorPorTamanho();
-		//Collections.sort(palavras, comparador);
-		
-		palavras.sort(comparador);
 		System.out.println(palavras);
 		
-		/*for (String p : palavras) {
-			System.out.println(p);
-		} */
+		/*
+		 * for (String p : palavras) { System.out.println(p); }
+		 */
+
+		palavras.forEach(s ->
+
+		System.out.println(s)
+
+		);
 		
-		Consumer<String> consumidor = new ImprimeNaLinha();
-		palavras.forEach(consumidor);
+		new Thread(() -> 
+		System.out.println("Executando um Runnable")).start();
+		    
+
+
 	}
 
-}
-
-
-class ImprimeNaLinha implements Consumer<String> {
-
-	@Override
-	public void accept(String s) {
-		System.out.println(s);
-	}
-	
-}
-
-
-
-
-
-class ComparadorPorTamanho implements Comparator<String> {
-
-	@Override
-	public int compare(String s1, String s2) {
-		if(s1.length() < s2.length() ) 
-		    return -1;
-		if(s1.length() > s2.length())
-			return 1;
-		return 0;
-	}
-	
 }

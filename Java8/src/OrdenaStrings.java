@@ -3,6 +3,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.function.Consumer;
+import java.util.function.*;
 
 public class OrdenaStrings {
 
@@ -15,7 +16,8 @@ public class OrdenaStrings {
 
 		// Collections.sort(palavras, comparador);
 
-		palavras.sort( (s1 , s2) -> 
+		//palavras.sort(Comparator.comparing(String::length)); 
+		palavras.sort(String.CASE_INSENSITIVE_ORDER);
 
 			/*if (s1.length() < s2.length())
 				return -1;
@@ -23,19 +25,17 @@ public class OrdenaStrings {
 				return 1;
 			return 0; */
 			   
-			Integer.compare(s1.length(), s2.length())
+			 //Integer.compare(s1.length(), s2.length())
 				
-			);
-		
 		System.out.println(palavras);
 		
 		/*
 		 * for (String p : palavras) { System.out.println(p); }
 		 */
 
-		palavras.forEach(s ->
+		palavras.forEach(
 
-		System.out.println(s)
+		System.out::println
 
 		);
 		
